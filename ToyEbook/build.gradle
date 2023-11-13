@@ -1,0 +1,68 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.17'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.toy'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '11'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	
+	//spring web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	// 시큐리티
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	
+	//마이바티스
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1'
+	
+	//롬복
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	//dve tools
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
+	//오라클
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+	
+	//jsp, jstl
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation 'javax.servlet:jstl'
+	
+	//제이쿼리
+	implementation group: 'org.webjars', name: 'jquery', version: '3.6.0'
+	implementation group: 'org.webjars', name: 'bootstrap', version: '4.6.0'
+	
+	
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+}
+
+tasks.named('bootBuildImage') {
+	builder = 'paketobuildpacks/builder-jammy-base:latest'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
