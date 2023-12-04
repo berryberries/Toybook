@@ -8,6 +8,7 @@ import com.toy.ToyEbook.member.service.face.MemberService;
 @Service
 public class MemberServiceImple implements MemberService {
 
+
 	@Override
 	public Member getUserInfo() {
 		// TODO Auto-generated method stub
