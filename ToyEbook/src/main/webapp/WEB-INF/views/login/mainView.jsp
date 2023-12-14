@@ -11,6 +11,11 @@
 <input type="text" name="" id=""> 
 <button>검색</button>
 
-여긴 게시판들어가서 사진 클릭 후 해당 페이지로 이동
+로그인 확인
+아이디 : ${id}
+비밀번호 : ${pw}
+
+
+
 </body>
 </html>

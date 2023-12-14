@@ -3,8 +3,24 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.toy.ToyEbook.member.mapper">
+<mapper namespace="com.toy.ToyEbook.member.mapper.MemberMapper">
 
+	<insert id="memberInsert" parameterType="com.toy.ToyEbook.member.dto.Member">
+		INSERT INTO MEMBER(
+			MEMBERNO,
+			ID,
+			PW,
+			EMAIL,
+			ROLE
+		)
+		VALUES (
+			MEMBER_SEQ.NEXTVAL,
+			#{id},
+			#{pw},
+			#{email},
+			DEFAULT
+		)
+	</insert>
 
 
 </mapper>

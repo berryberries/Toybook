@@ -10,4 +10,11 @@ public interface MemberService {
 	 */
 	public Member getUserInfo();
 
+	/**
+	 * 유저 가입
+	 * @param member
+	 * @return 가입 성공 : 1
+	 */
+	public int memberJoin(Member member);
+
 }

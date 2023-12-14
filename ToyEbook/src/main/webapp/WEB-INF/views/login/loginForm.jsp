@@ -52,7 +52,7 @@
 </head>
  <body class="text-center">
    <main class="form-signin">
-      <form action="login.jsp" method="post">
+      <form action="/loginForm" method="post">
          <img class="mb-4" src="resources/images/bootstrap-logo.svg" alt="" width="72" height="57">
          <h1 class="h3 mb-3 fw-normal">ToyEbook Login</h1>
          
@@ -71,12 +71,9 @@
             </label>
          </div>
          <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+         <a class="h3 mb-3 fw-normal" href="/join">회원가입</a>
          <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
       </form>
    </main>
 </body>
-<script type="text/javascript">
-
-
-</script>
 </html>
